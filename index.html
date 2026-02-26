@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频解析工具</title>
+    <style>
+        body { padding: 20px; font-family: Arial; }
+        #urlInput { width: 80%; padding: 10px; margin-bottom: 10px; }
+        #parseBtn { padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 5px; }
+        #result { margin-top: 20px; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>视频解析</h1>
+    <input type="text" id="urlInput" placeholder="输入视频链接">
+    <button onclick="parseVideo()" id="parseBtn">解析</button>
+    <div id="result"></div>
+
+    <script>
+        function parseVideo() {
+            const url = document.getElementById('urlInput').value;
+            if (!url) {
+                document.getElementById('result').innerText = '请输入视频链接！';
+                return;
+            }
+            document.getElementById('result').innerHTML = `解析成功！<br><a href="${url}" target="_blank">点击播放</a>`;
+        }
+    </script>
+</body>
+</html>
